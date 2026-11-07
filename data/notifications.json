@@ -1,0 +1,855 @@
+{
+  "notifications": [
+    {
+      "id": "3473239f-188f-4e86-9b94-d004e17dad97",
+      "type": "profile_update",
+      "message": "abhiru updated their profile name",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "timestamp": "2026-11-07T14:31:09.902Z"
+    },
+    {
+      "id": "dcf5837d-5112-4cc3-8c1c-7c223f09b521",
+      "type": "file_upload",
+      "message": "abhiru uploaded 1 file(s): WhatsApp Image 2026-10-20 at 16.06.51.png",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "count": 1,
+      "paths": [
+        "WhatsApp Image 2026-10-20 at 16.06.51.png"
+      ],
+      "timestamp": "2026-11-07T14:31:21.503Z"
+    },
+    {
+      "id": "1292586b-cbad-4705-be2a-cd11cbd8fd53",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"WhatsApp Image 2026-10-20 at 16.06.51.png\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "WhatsApp Image 2026-10-20 at 16.06.51.png",
+      "timestamp": "2026-11-07T14:31:24.834Z"
+    },
+    {
+      "id": "8310f3c1-e301-499d-af76-27f7418824e3",
+      "type": "folder_create",
+      "message": "abhiru created folder \"test\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "test",
+      "timestamp": "2026-11-07T14:32:48.258Z"
+    },
+    {
+      "id": "1dd8408d-1769-45bb-aa80-fe6bc08e5d8a",
+      "type": "file_upload",
+      "message": "abhiru uploaded 1 file(s): low_res_Facebook_Ufq9P5OmWj-3fb5ed2895.png",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "count": 1,
+      "paths": [
+        "test/low_res_Facebook_Ufq9P5OmWj-3fb5ed2895.png"
+      ],
+      "timestamp": "2026-11-07T14:32:57.204Z"
+    },
+    {
+      "id": "9bd7d674-e51b-439e-97bb-720ccdcbcec2",
+      "type": "folder_delete",
+      "message": "abhiru deleted folder \"test\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "test",
+      "timestamp": "2026-11-07T14:33:24.241Z"
+    },
+    {
+      "id": "c871d221-f165-445f-ac0b-754f396b47d1",
+      "type": "file_upload",
+      "message": "abhiru uploaded 1 file(s): videoplayback.mp4",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "count": 1,
+      "paths": [
+        "videoplayback.mp4"
+      ],
+      "timestamp": "2026-11-07T14:35:23.379Z"
+    },
+    {
+      "id": "4a00839d-4244-4ccf-a953-94027521d1aa",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"videoplayback.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "videoplayback.mp4",
+      "timestamp": "2026-11-07T14:35:35.981Z"
+    },
+    {
+      "id": "2e42e182-f901-46c9-84e5-12db04ac056b",
+      "type": "file_upload",
+      "message": "abhiru uploaded 1 file(s): videoplayback.mp4",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "count": 1,
+      "paths": [
+        "videoplayback.mp4"
+      ],
+      "timestamp": "2026-11-07T14:37:16.487Z"
+    },
+    {
+      "id": "ccd3ea53-238b-4bbc-a56c-296d69804db7",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"videoplayback.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "videoplayback.mp4",
+      "timestamp": "2026-11-07T14:37:25.679Z"
+    },
+    {
+      "id": "eb11dadf-7c9c-42f0-b68a-81a2e3ee94ab",
+      "type": "file_upload",
+      "message": "abhiru uploaded 1 file(s): videoplayback.mp4",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "count": 1,
+      "paths": [
+        "videoplayback.mp4"
+      ],
+      "timestamp": "2026-11-07T14:37:50.804Z"
+    },
+    {
+      "id": "73561525-5738-4978-975e-11e5bfa48335",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"videoplayback.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "videoplayback.mp4",
+      "timestamp": "2026-11-07T14:38:07.797Z"
+    },
+    {
+      "id": "b5938abe-c695-497b-bdc7-a8a27eb65a29",
+      "type": "file_upload",
+      "message": "abhiru uploaded 1 file(s): videoplayback.mp4",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "count": 1,
+      "paths": [
+        "videoplayback.mp4"
+      ],
+      "timestamp": "2026-11-07T14:42:15.033Z"
+    },
+    {
+      "id": "41550c54-c93a-4051-b3c9-296c259e8b54",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"videoplayback.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "videoplayback.mp4",
+      "timestamp": "2026-11-07T14:42:39.512Z"
+    },
+    {
+      "id": "54049715-f7a7-465a-b691-4754b966c88c",
+      "type": "profile_update",
+      "message": "abhiru updated their profile name",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "timestamp": "2026-11-07T14:45:39.632Z"
+    },
+    {
+      "id": "68fe5692-cc77-46e5-8029-06b6b4feb319",
+      "type": "file_upload",
+      "message": "abhiru uploaded 7 file(s): Grade-10-History-3rd-term-2024.pdf, gce-ordinary-level-exam-2024-2025-mathematic...",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "count": 7,
+      "paths": [
+        "Grade-10-History-3rd-term-2024.pdf",
+        "gce-ordinary-level-exam-2024-2025-mathematics-past-papers-6957836139c70.pdf",
+        "2.jpg",
+        "1.jpg",
+        "b98375c3-5598-45de-9cc4-45cdde641ad5.jpeg",
+        "WhatsApp Image 2026-11-03 at 21.30.42 (1).jpeg",
+        "WhatsApp Image 2026-11-03 at 21.30.42.jpeg"
+      ],
+      "timestamp": "2026-11-07T14:46:08.269Z"
+    },
+    {
+      "id": "2cca8c58-cec2-4592-a03e-147d3c9f4de2",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"1.jpg\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "1.jpg",
+      "timestamp": "2026-11-07T14:48:38.581Z"
+    },
+    {
+      "id": "6ce18231-92fa-424e-9980-7af9b1c5a9d7",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"2.jpg\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "2.jpg",
+      "timestamp": "2026-11-07T14:48:41.963Z"
+    },
+    {
+      "id": "cedbd181-84b0-415f-b6b5-5bb2d0af9290",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"b98375c3-5598-45de-9cc4-45cdde641ad5.jpeg\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "b98375c3-5598-45de-9cc4-45cdde641ad5.jpeg",
+      "timestamp": "2026-11-07T14:48:44.668Z"
+    },
+    {
+      "id": "76237cb5-e315-479a-89c4-db8e886d88e4",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"gce-ordinary-level-exam-2024-2025-mathematics-past-papers-6957836139c70.pdf\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "gce-ordinary-level-exam-2024-2025-mathematics-past-papers-6957836139c70.pdf",
+      "timestamp": "2026-11-07T14:48:47.042Z"
+    },
+    {
+      "id": "e13a5e72-bc47-49a0-aeb7-ff77d1f70257",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"Grade-10-History-3rd-term-2024.pdf\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "Grade-10-History-3rd-term-2024.pdf",
+      "timestamp": "2026-11-07T14:48:49.885Z"
+    },
+    {
+      "id": "afe76bae-2e3a-408a-bb55-06092a85c7ff",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"WhatsApp Image 2026-11-03 at 21.30.42 (1).jpeg\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "WhatsApp Image 2026-11-03 at 21.30.42 (1).jpeg",
+      "timestamp": "2026-11-07T14:48:53.103Z"
+    },
+    {
+      "id": "3e255c20-57d1-4de2-94d7-3fd944eea189",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"WhatsApp Image 2026-11-03 at 21.30.42.jpeg\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "WhatsApp Image 2026-11-03 at 21.30.42.jpeg",
+      "timestamp": "2026-11-07T14:48:55.969Z"
+    },
+    {
+      "id": "d1ec2d82-e5de-4a5e-b840-9483f4f5667c",
+      "type": "file_upload",
+      "message": "abhiru uploaded 1 file(s): videoplayback.mp4",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "count": 1,
+      "paths": [
+        "videoplayback.mp4"
+      ],
+      "timestamp": "2026-11-07T14:49:54.156Z"
+    },
+    {
+      "id": "7322c709-09ff-494e-9c14-499c7b2e391c",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"videoplayback.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "videoplayback.mp4",
+      "timestamp": "2026-11-07T14:50:10.010Z"
+    },
+    {
+      "id": "fd2cceff-d5a9-4725-b4a9-13f13a44d5e4",
+      "type": "folder_create",
+      "message": "abhiru created folder \"fjdifw;fhe\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "fjdifw;fhe",
+      "timestamp": "2026-11-07T14:57:50.875Z"
+    },
+    {
+      "id": "222fbd6c-2263-402d-8124-204ebff6952b",
+      "type": "file_upload",
+      "message": "abhiru uploaded 1 file(s): 61697ff7321a261d57673705914c3d03.jpg",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "count": 1,
+      "paths": [
+        "fjdifw;fhe/61697ff7321a261d57673705914c3d03.jpg"
+      ],
+      "timestamp": "2026-11-07T14:58:01.416Z"
+    },
+    {
+      "id": "8af4aecf-d199-4a63-b6be-60e17b87ff4a",
+      "type": "folder_delete",
+      "message": "abhiru deleted folder \"fjdifw;fhe\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "fjdifw;fhe",
+      "timestamp": "2026-11-07T14:59:17.426Z"
+    },
+    {
+      "id": "b2bbef26-4eef-40d8-886b-a21b66630a9d",
+      "type": "file_upload",
+      "message": "abhiru uploaded 17 file(s): 212.mp4, band.mp4, band.mp4.mp4, CUKI3970.MP4, KYJY9296.MP4, PYSC8314.MP4, RVGV7...",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "count": 17,
+      "paths": [
+        "212.mp4",
+        "band.mp4",
+        "band.mp4.mp4",
+        "CUKI3970.MP4",
+        "KYJY9296.MP4",
+        "PYSC8314.MP4",
+        "RVGV7446.MP4",
+        "WhatsApp Video 2026-10-02 at 17.25.51.mp4",
+        "WhatsApp Video 2026-10-02 at 17.32.04.mp4",
+        "WhatsApp Video 2026-10-02 at 17.32.40.mp4",
+        "WhatsApp Video 2026-10-02 at 17.33.27.mp4",
+        "WhatsApp Video 2026-10-02 at 17.34.00.mp4",
+        "WhatsApp Video 2026-10-02 at 17.35.13.mp4",
+        "WhatsApp Video 2026-10-02 at 17.35.55.mp4",
+        "WhatsApp Video 2026-10-02 at 17.36.15.mp4",
+        "WhatsApp Video 2026-10-02 at 17.40.14.mp4",
+        "WhatsApp Video 2026-10-02 at 20.09.37.mp4"
+      ],
+      "timestamp": "2026-11-07T15:04:12.243Z"
+    },
+    {
+      "id": "416c8c95-ce61-48c6-a103-5fcc1947e4a7",
+      "type": "file_upload",
+      "message": "abhiru uploaded 3 file(s): videoplayback (2).mp4, videoplayback (1).mp4, videoplayback.mp4",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "count": 3,
+      "paths": [
+        "videoplayback (2).mp4",
+        "videoplayback (1).mp4",
+        "videoplayback.mp4"
+      ],
+      "timestamp": "2026-11-07T15:05:43.342Z"
+    },
+    {
+      "id": "dc12d032-3757-4644-9221-307acb1e41fa",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"212.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "212.mp4",
+      "timestamp": "2026-11-07T15:06:23.580Z"
+    },
+    {
+      "id": "ea3e7f5e-5498-4f45-b48b-a42194fd3c82",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"band.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "band.mp4",
+      "timestamp": "2026-11-07T15:06:26.911Z"
+    },
+    {
+      "id": "81457025-a628-4142-8916-754e9284f3b7",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"band.mp4.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "band.mp4.mp4",
+      "timestamp": "2026-11-07T15:06:29.638Z"
+    },
+    {
+      "id": "27e5fe02-a9bc-4c36-83a1-aded0616448b",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"CUKI3970.MP4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "CUKI3970.MP4",
+      "timestamp": "2026-11-07T15:06:32.622Z"
+    },
+    {
+      "id": "54e484d7-014f-4e80-972e-25df0e08bd80",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"KYJY9296.MP4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "KYJY9296.MP4",
+      "timestamp": "2026-11-07T15:06:36.006Z"
+    },
+    {
+      "id": "590c26a8-540b-4cbf-897c-26e5f1b6c24d",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"PYSC8314.MP4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "PYSC8314.MP4",
+      "timestamp": "2026-11-07T15:06:38.576Z"
+    },
+    {
+      "id": "d96025bb-e93c-420b-b212-ba5403805dbf",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"RVGV7446.MP4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "RVGV7446.MP4",
+      "timestamp": "2026-11-07T15:06:41.238Z"
+    },
+    {
+      "id": "b7c34cdb-4493-4015-ae2c-e4e4f0054558",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"videoplayback (1).mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "videoplayback (1).mp4",
+      "timestamp": "2026-11-07T15:06:44.053Z"
+    },
+    {
+      "id": "c44a4325-af3d-4a4e-a19c-7201b4175706",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"videoplayback (2).mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "videoplayback (2).mp4",
+      "timestamp": "2026-11-07T15:06:46.673Z"
+    },
+    {
+      "id": "994968fc-198f-4d2a-a4f5-2ee9b7413759",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"videoplayback.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "videoplayback.mp4",
+      "timestamp": "2026-11-07T15:06:55.138Z"
+    },
+    {
+      "id": "df84210e-1f2a-4173-881c-833cd801123e",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"WhatsApp Video 2026-10-02 at 17.25.51.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "WhatsApp Video 2026-10-02 at 17.25.51.mp4",
+      "timestamp": "2026-11-07T15:06:57.219Z"
+    },
+    {
+      "id": "dc0fc042-563e-4717-b570-30e3b4a22839",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"WhatsApp Video 2026-10-02 at 17.32.04.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "WhatsApp Video 2026-10-02 at 17.32.04.mp4",
+      "timestamp": "2026-11-07T15:06:59.660Z"
+    },
+    {
+      "id": "115faa28-5ce5-4fc8-addd-0b3b97bed926",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"WhatsApp Video 2026-10-02 at 20.09.37.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "WhatsApp Video 2026-10-02 at 20.09.37.mp4",
+      "timestamp": "2026-11-07T15:07:03.038Z"
+    },
+    {
+      "id": "c347fa5e-b825-428b-a2c8-87829d6f0e56",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"WhatsApp Video 2026-10-02 at 17.40.14.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "WhatsApp Video 2026-10-02 at 17.40.14.mp4",
+      "timestamp": "2026-11-07T15:07:13.341Z"
+    },
+    {
+      "id": "55608d9f-41f4-4c5d-b3e3-151482826aa1",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"WhatsApp Video 2026-10-02 at 17.32.40.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "WhatsApp Video 2026-10-02 at 17.32.40.mp4",
+      "timestamp": "2026-11-07T15:07:16.037Z"
+    },
+    {
+      "id": "93f71c37-abf6-4087-95c6-cb63c9ae6352",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"WhatsApp Video 2026-10-02 at 17.33.27.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "WhatsApp Video 2026-10-02 at 17.33.27.mp4",
+      "timestamp": "2026-11-07T15:07:22.575Z"
+    },
+    {
+      "id": "afea8c35-67d6-4ff6-9581-3cf83911c14a",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"WhatsApp Video 2026-10-02 at 17.34.00.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "WhatsApp Video 2026-10-02 at 17.34.00.mp4",
+      "timestamp": "2026-11-07T15:07:25.227Z"
+    },
+    {
+      "id": "fd42b17c-2eba-4ee6-8603-c004c71d2847",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"WhatsApp Video 2026-10-02 at 17.35.13.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "WhatsApp Video 2026-10-02 at 17.35.13.mp4",
+      "timestamp": "2026-11-07T15:07:27.861Z"
+    },
+    {
+      "id": "de479510-2574-45d5-8a57-a4809d185d14",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"WhatsApp Video 2026-10-02 at 17.35.55.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "WhatsApp Video 2026-10-02 at 17.35.55.mp4",
+      "timestamp": "2026-11-07T15:07:30.875Z"
+    },
+    {
+      "id": "c5542855-f01d-4e20-824f-8c7a0b4db2ba",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"WhatsApp Video 2026-10-02 at 17.36.15.mp4\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "WhatsApp Video 2026-10-02 at 17.36.15.mp4",
+      "timestamp": "2026-11-07T15:07:33.484Z"
+    },
+    {
+      "id": "2ff60c91-1b77-45c9-bc5a-371dd6a29de5",
+      "type": "directory_upload",
+      "message": "abhiru uploaded a directory with 14 file(s)",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "count": 14,
+      "timestamp": "2026-11-07T15:08:15.210Z"
+    },
+    {
+      "id": "390d2916-4389-4a89-b3fc-06afa6263a7b",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"black-arrow-background-abstract-border-gold-design-vector.zip\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "black-arrow-background-abstract-border-gold-design-vector.zip",
+      "timestamp": "2026-11-07T15:09:21.250Z"
+    },
+    {
+      "id": "7a378977-f5f5-4d27-980a-ab44e303feb9",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"clean-modern-resume-portfolio-cv-template 3.zip\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "clean-modern-resume-portfolio-cv-template 3.zip",
+      "timestamp": "2026-11-07T15:09:24.562Z"
+    },
+    {
+      "id": "6b4ad0ac-eb6d-4933-b928-36c51fccb6de",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"clean-modern-resume-portfolio-cv-template1.zip\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "clean-modern-resume-portfolio-cv-template1.zip",
+      "timestamp": "2026-11-07T15:09:27.398Z"
+    },
+    {
+      "id": "ab10e52b-f77f-40f7-be93-0e9302fb120e",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"clean-modern-resume-portfolio-cv-template2.zip\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "clean-modern-resume-portfolio-cv-template2.zip",
+      "timestamp": "2026-11-07T15:09:30.204Z"
+    },
+    {
+      "id": "8d265b10-f882-471b-9739-059a100b3f4f",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"flat-lay-desktop-with-agenda-magnifying-glass.jpg\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "flat-lay-desktop-with-agenda-magnifying-glass.jpg",
+      "timestamp": "2026-11-07T15:09:33.248Z"
+    },
+    {
+      "id": "a304ef15-a74e-4625-a962-42efbc6309ba",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"gradient-black-background-with-cubes.zip\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "gradient-black-background-with-cubes.zip",
+      "timestamp": "2026-11-07T15:09:36.196Z"
+    },
+    {
+      "id": "b6725eac-4f71-4f7f-bc9c-d93bcca065dc",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"hot-coffee-modern-desk-wireless-technology-generated-by-ai.jpg\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "hot-coffee-modern-desk-wireless-technology-generated-by-ai.jpg",
+      "timestamp": "2026-11-07T15:09:38.570Z"
+    },
+    {
+      "id": "7a3a3612-2fa1-4778-b9bf-9ffb4e0d0055",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"MD1221_Business_Card_Mockup_90x55.zip\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "MD1221_Business_Card_Mockup_90x55.zip",
+      "timestamp": "2026-11-07T15:09:41.338Z"
+    },
+    {
+      "id": "53c8b72a-6c85-40ee-b6f7-f7ca897c8982",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"nice-business-desk-black-background (1).jpg\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "nice-business-desk-black-background (1).jpg",
+      "timestamp": "2026-11-07T15:09:44.755Z"
+    },
+    {
+      "id": "cfcb638d-1f9f-496c-a5e5-ddb8b401f50c",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"nice-business-desk-black-background.jpg\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "nice-business-desk-black-background.jpg",
+      "timestamp": "2026-11-07T15:09:50.910Z"
+    },
+    {
+      "id": "cdc05712-87b0-4004-af1d-b3f487c35f20",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"PIXELVAULT_PORTFOLIO  BUNDLE.rar\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "PIXELVAULT_PORTFOLIO  BUNDLE.rar",
+      "timestamp": "2026-11-07T15:09:53.542Z"
+    },
+    {
+      "id": "2fa1ad10-314a-4efe-aca2-59a9ef776e78",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"Portfolio presentation.zip\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "Portfolio presentation.zip",
+      "timestamp": "2026-11-07T15:09:55.908Z"
+    },
+    {
+      "id": "5037454b-5101-4f1f-b5bb-cfde2466a56e",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"PORTFOLIO-PRO (Website template with html,css and javascript).zip\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "PORTFOLIO-PRO (Website template with html,css and javascript).zip",
+      "timestamp": "2026-11-07T15:09:58.696Z"
+    },
+    {
+      "id": "6ccd49c9-857d-4d52-a61f-9b4c1ea24bfc",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"READ.txt\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "READ.txt",
+      "timestamp": "2026-11-07T15:10:08.254Z"
+    },
+    {
+      "id": "8a29e9f4-5b03-4066-8203-2b2c8fe94748",
+      "type": "profile_update",
+      "message": "abhiru updated their profile name",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "timestamp": "2026-11-07T15:10:21.529Z"
+    },
+    {
+      "id": "e47e85be-e4e4-411a-a902-6f943f6846d7",
+      "type": "file_upload",
+      "message": "abhiru uploaded 1 file(s): PIXELVAULT_PORTFOLIO  BUNDLE.rar",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "count": 1,
+      "paths": [
+        "PIXELVAULT_PORTFOLIO  BUNDLE.rar"
+      ],
+      "timestamp": "2026-11-07T15:13:40.214Z"
+    },
+    {
+      "id": "50f64214-6ec7-40b0-9423-7e6bc74656d2",
+      "type": "file_delete",
+      "message": "abhiru deleted file \"PIXELVAULT_PORTFOLIO  BUNDLE.rar\"",
+      "user": "abhiru",
+      "userId": "dev-user-001",
+      "path": "PIXELVAULT_PORTFOLIO  BUNDLE.rar",
+      "timestamp": "2026-11-07T15:13:44.202Z"
+    },
+    {
+      "id": "085f61a5-6032-4218-9cac-06018b8f6709",
+      "type": "folder_create",
+      "message": "ABHIRU ANUHAS created folder \"2026.10.29\"",
+      "user": "ABHIRU ANUHAS",
+      "userId": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+      "path": "2026.10.29",
+      "timestamp": "2026-11-07T16:24:49.279Z"
+    },
+    {
+      "id": "0001b09e-5f36-42a5-bedc-6069b232a641",
+      "type": "directory_upload",
+      "message": "ABHIRU ANUHAS uploaded a directory with 17 file(s)",
+      "user": "ABHIRU ANUHAS",
+      "userId": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+      "count": 17,
+      "timestamp": "2026-11-07T16:25:14.997Z"
+    },
+    {
+      "id": "e23ba7ab-e956-4f43-83af-1c945742fa38",
+      "type": "folder_delete",
+      "message": "ABHIRU ANUHAS deleted folder \"2026.10.29\"",
+      "user": "ABHIRU ANUHAS",
+      "userId": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+      "path": "2026.10.29",
+      "timestamp": "2026-11-07T16:26:11.111Z"
+    },
+    {
+      "id": "479b39eb-149f-471b-8479-8cd94abf4e5e",
+      "type": "folder_create",
+      "message": "Abhiru created folder \"2025\"",
+      "user": "Abhiru",
+      "userId": "TvGMT5Xy7pfLBsiyFCgmNQJ9gyy2",
+      "path": "2025",
+      "timestamp": "2026-11-07T16:31:38.659Z"
+    },
+    {
+      "id": "d45de7a0-a6d6-49a6-89d5-8005197edab9",
+      "type": "directory_upload",
+      "message": "ABHIRU ANUHAS uploaded a directory with 17 file(s)",
+      "user": "ABHIRU ANUHAS",
+      "userId": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+      "count": 17,
+      "timestamp": "2026-11-07T16:32:03.337Z"
+    },
+    {
+      "id": "981630f1-023d-4453-a0d8-20befced6e90",
+      "type": "file_delete",
+      "message": "Abhiru deleted file \"WhatsApp Video 2026-10-02 at 20.09.37.mp4\"",
+      "user": "Abhiru",
+      "userId": "TvGMT5Xy7pfLBsiyFCgmNQJ9gyy2",
+      "path": "2025/WhatsApp Video 2026-10-02 at 20.09.37.mp4",
+      "timestamp": "2026-11-07T16:33:27.496Z"
+    },
+    {
+      "id": "d2beb5b4-c372-4499-baff-2cdc935ee04f",
+      "type": "file_delete",
+      "message": "Abhiru deleted file \"CUKI3970.MP4\"",
+      "user": "Abhiru",
+      "userId": "TvGMT5Xy7pfLBsiyFCgmNQJ9gyy2",
+      "path": "2025/CUKI3970.MP4",
+      "timestamp": "2026-11-07T16:33:30.483Z"
+    },
+    {
+      "id": "484d166e-84d5-4b82-b1a2-b955512861d7",
+      "type": "folder_delete",
+      "message": "ABHIRU ANUHAS deleted folder \"2025\"",
+      "user": "ABHIRU ANUHAS",
+      "userId": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+      "path": "2025",
+      "timestamp": "2026-11-07T16:34:29.219Z"
+    },
+    {
+      "id": "9a431f1e-94a1-456f-84bf-c51dabd273d6",
+      "type": "file_upload",
+      "message": "ABHIRU ANUHAS uploaded 1 file(s): WhatsApp Video 2026-10-02 at 17.40.14.mp4",
+      "user": "ABHIRU ANUHAS",
+      "userId": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+      "count": 1,
+      "paths": [
+        "WhatsApp Video 2026-10-02 at 17.40.14.mp4"
+      ],
+      "timestamp": "2026-11-07T16:35:50.619Z"
+    },
+    {
+      "id": "a48aab4d-1df4-47d5-8fed-dbfc4d039493",
+      "type": "file_delete",
+      "message": "Abhiru deleted file \"WhatsApp Video 2026-10-02 at 17.40.14.mp4\"",
+      "user": "Abhiru",
+      "userId": "TvGMT5Xy7pfLBsiyFCgmNQJ9gyy2",
+      "path": "WhatsApp Video 2026-10-02 at 17.40.14.mp4",
+      "timestamp": "2026-11-07T16:35:58.234Z"
+    },
+    {
+      "id": "d971b3b4-adac-4e74-9759-a95d7308172e",
+      "type": "file_upload",
+      "message": "ABHIRU ANUHAS uploaded 1 file(s): PYSC8314.MP4",
+      "user": "ABHIRU ANUHAS",
+      "userId": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+      "count": 1,
+      "paths": [
+        "PYSC8314.MP4"
+      ],
+      "timestamp": "2026-11-07T16:36:18.306Z"
+    },
+    {
+      "id": "27fa32b0-5d74-4c45-9d8b-f57a891b5e54",
+      "type": "file_delete",
+      "message": "Abhiru deleted file \"PYSC8314.MP4\"",
+      "user": "Abhiru",
+      "userId": "TvGMT5Xy7pfLBsiyFCgmNQJ9gyy2",
+      "path": "PYSC8314.MP4",
+      "timestamp": "2026-11-07T16:36:28.171Z"
+    },
+    {
+      "id": "402ded17-f178-4ade-b673-a12e790fe67e",
+      "type": "folder_create",
+      "message": "ABHIRU ANUHAS created folder \"anime\"",
+      "user": "ABHIRU ANUHAS",
+      "userId": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+      "path": "anime",
+      "timestamp": "2026-11-07T16:37:16.846Z"
+    },
+    {
+      "id": "607a7c9a-f1fb-4feb-8371-b62785ef9c73",
+      "type": "file_delete",
+      "message": "ABHIRU ANUHAS deleted file \"E01 - Rebirth.mkv\"",
+      "user": "ABHIRU ANUHAS",
+      "userId": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+      "path": "anime/E01 - Rebirth.mkv",
+      "timestamp": "2026-11-07T16:38:18.761Z"
+    },
+    {
+      "id": "c1f15f3f-5293-4a70-abc0-1ee5f6d5877e",
+      "type": "file_upload",
+      "message": "ABHIRU ANUHAS uploaded 1 file(s): E01 - Rebirth.mkv",
+      "user": "ABHIRU ANUHAS",
+      "userId": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+      "count": 1,
+      "paths": [
+        "anime/E01 - Rebirth.mkv"
+      ],
+      "timestamp": "2026-11-07T16:39:04.989Z"
+    },
+    {
+      "id": "2c4a7c6e-7a35-4977-a0f2-c5180fbd10d2",
+      "type": "file_upload",
+      "message": "ABHIRU ANUHAS uploaded 6 file(s): Attack On Titan S1 E01 [Sl Anime Club] Burn-In 1280X720 X264.mp4, Attack On Tita...",
+      "user": "ABHIRU ANUHAS",
+      "userId": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+      "count": 6,
+      "paths": [
+        "anime/Attack On Titan S1 E01 [Sl Anime Club] Burn-In 1280X720 X264.mp4",
+        "anime/Attack On Titan S1 E02 [Sl Anime Club] Burn-In 1280X720 X264.mp4",
+        "anime/Attack On Titan S1 E03 [Sl Anime Club] Burn-In 1280X720 X264.mp4",
+        "anime/Attack On Titan S1 E04 [Sl Anime Club] Burn-In 1280X720 X264.mp4",
+        "anime/Attack On Titan S1 E05 [Sl Anime Club] Burn-In 1280X720 X264.mp4",
+        "anime/Attack On Titan S1 E06 [Sl Anime Club] Burn-In 1280X720 X264.mp4"
+      ],
+      "timestamp": "2026-11-07T16:39:10.274Z"
+    },
+    {
+      "id": "5880d590-eee4-4b29-b15b-5fbf3bd9ee1d",
+      "type": "file_upload",
+      "message": "ABHIRU ANUHAS uploaded 1 file(s): Avatar - LEGEND OF AANG_burn-in_1920x1080_x265.mp4",
+      "user": "ABHIRU ANUHAS",
+      "userId": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+      "count": 1,
+      "paths": [
+        "anime/Avatar - LEGEND OF AANG_burn-in_1920x1080_x265.mp4"
+      ],
+      "timestamp": "2026-11-07T16:39:25.083Z"
+    },
+    {
+      "id": "c50172d5-9e9b-4bdb-a1e0-f438b48cfe21",
+      "type": "folder_delete",
+      "message": "ABHIRU ANUHAS deleted folder \"anime\"",
+      "user": "ABHIRU ANUHAS",
+      "userId": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+      "path": "anime",
+      "timestamp": "2026-11-07T16:39:35.673Z"
+    }
+  ]
+}

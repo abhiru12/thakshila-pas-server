@@ -1,0 +1,54 @@
+{
+  "mock-mw6hyrs5": {
+    "uid": "mock-mw6hyrs5",
+    "email": "society.member@thakshila.edu",
+    "displayName": "Society Member",
+    "photoURL": null,
+    "storageUsed": 0,
+    "storageLimit": 107374182400,
+    "createdAt": "2026-11-07T14:26:57.750Z",
+    "lastLogin": "2026-11-07T14:26:57.750Z"
+  },
+  "mock-mw6i04ur": {
+    "uid": "mock-mw6i04ur",
+    "email": "society.member@thakshila.edu",
+    "displayName": "Society Member",
+    "photoURL": null,
+    "storageUsed": 0,
+    "storageLimit": 107374182400,
+    "createdAt": "2026-11-07T14:28:01.320Z",
+    "lastLogin": "2026-11-07T14:28:01.339Z"
+  },
+  "dev-user-001": {
+    "uid": "dev-user-001",
+    "email": "dev@thakshila.edu",
+    "displayName": "abhiru",
+    "photoURL": null,
+    "storageUsed": 114811,
+    "storageLimit": 107374182400,
+    "createdAt": "2026-11-07T14:30:27.220Z",
+    "lastLogin": "2026-11-07T15:13:44.233Z"
+  },
+  "jw5sEqdEEPUeAqwb1bKSse0rwgF3": {
+    "uid": "jw5sEqdEEPUeAqwb1bKSse0rwgF3",
+    "email": "abhiruanuhas23@gmail.com",
+    "displayName": "ABHIRU ANUHAS",
+    "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocLIePXjkxBhmDHxJPgPTipI0MzLkPjhXtQiWXsDMxQ70XNzA4lP=s96-c",
+    "storageUsed": 3173970023,
+    "storageLimit": 107374182400,
+    "createdAt": "2026-11-07T16:23:19.669Z",
+    "lastLogin": "2026-11-07T18:21:10.833Z",
+    "isAdmin": true,
+    "banned": false
+  },
+  "TvGMT5Xy7pfLBsiyFCgmNQJ9gyy2": {
+    "uid": "TvGMT5Xy7pfLBsiyFCgmNQJ9gyy2",
+    "email": "abhirunbx24@gmail.com",
+    "displayName": "Abhiru",
+    "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKKXtljP1M1oky2CHViETcxAPAJC3xdJkwEtd7DgFAImPBV030=s96-c",
+    "storageUsed": 0,
+    "storageLimit": 107374182400,
+    "createdAt": "2026-11-07T16:31:28.701Z",
+    "lastLogin": "2026-11-07T16:39:57.470Z"
+  }
+}

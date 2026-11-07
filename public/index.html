@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thakshila PAS Cloud</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            surface: {
+              950: '#07080c',
+              900: '#0c0e14',
+              850: '#11141c',
+              800: '#161a24',
+              700: '#1e2433',
+              600: '#2a3144',
+              500: '#3a435a'
+            },
+            accent: {
+              DEFAULT: '#e8b84a',
+              soft: '#f0c96a',
+              dim: '#b8923a',
+              muted: 'rgba(232,184,74,0.15)'
+            },
+            rose: {
+              DEFAULT: '#c45c5c',
+              soft: '#e07a7a',
+              dim: '#8f3f3f'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+          },
+          boxShadow: {
+            glow: '0 0 24px rgba(232,184,74,0.18)',
+            card: '0 8px 32px rgba(0,0,0,0.45)',
+            panel: '0 20px 50px rgba(0,0,0,0.55)'
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.35s ease-out',
+            'slide-up': 'slideUp 0.35s cubic-bezier(0.16,1,0.3,1)',
+            'slide-right': 'slideRight 0.3s cubic-bezier(0.16,1,0.3,1)',
+            'scale-in': 'scaleIn 0.25s cubic-bezier(0.16,1,0.3,1)',
+            'pulse-soft': 'pulseSoft 2s ease-in-out infinite'
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(12px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            slideRight: { '0%': { opacity: '0', transform: 'translateX(16px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
+            scaleIn: { '0%': { opacity: '0', transform: 'scale(0.94)' }, '100%': { opacity: '1', transform: 'scale(1)' } },
+            pulseSoft: { '0%,100%': { opacity: '1' }, '50%': { opacity: '0.6' } }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
+  <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+    * { scrollbar-width: thin; scrollbar-color: #2a3144 transparent; }
+    body {
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(232,184,74,0.07), transparent 50%),
+                  radial-gradient(900px 500px at 100% 0%, rgba(196,92,92,0.06), transparent 45%),
+                  #0c0e14;
+      min-height: 100vh;
+    }
+    .scrollbar-thin::-webkit-scrollbar { width: 5px; height: 5px; }
+    .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+    .scrollbar-thin::-webkit-scrollbar-thumb { background: #2a3144; border-radius: 999px; }
+    .scrollbar-thin::-webkit-scrollbar-thumb:hover { background: #3a435a; }
+
+    .glass {
+      background: rgba(22, 26, 36, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .glass-strong {
+      background: rgba(17, 20, 28, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .file-card {
+      transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease, border-color 0.25s ease;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .file-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(232,184,74,0.2);
+      border-color: rgba(232,184,74,0.25);
+    }
+
+    .icon-btn {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: #c8cdd8;
+    }
+    .icon-btn:hover {
+      background: rgba(232,184,74,0.15);
+      color: #e8b84a;
+      border-color: rgba(232,184,74,0.3);
+      transform: scale(1.06);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #e8b84a, #d4a030);
+      color: #1a1408;
+      font-weight: 600;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 16px rgba(232,184,74,0.25);
+    }
+    .btn-primary:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(232,184,74,0.35);
+    }
+    .btn-primary:disabled { opacity: 0.45; pointer-events: none; }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #c8cdd8;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+
+    .btn-danger {
+      background: rgba(196,92,92,0.2);
+      border: 1px solid rgba(196,92,92,0.35);
+      color: #e07a7a;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+    }
+    .btn-danger:hover {
+      background: rgba(196,92,92,0.35);
+      color: #fff;
+    }
+
+    .modal-backdrop {
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      animation: fadeIn 0.2s ease;
+    }
+    .modal-panel {
+      animation: scaleIn 0.28s cubic-bezier(0.16,1,0.3,1);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+    }
+
+    .panel-slide {
+      animation: slideRight 0.3s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .input-dark {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #e8eaef;
+      border-radius: 0.875rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .input-dark:focus {
+      outline: none;
+      border-color: rgba(232,184,74,0.5);
+      box-shadow: 0 0 0 3px rgba(232,184,74,0.12);
+    }
+    .input-dark::placeholder { color: #5a6278; }
+
+    .notification-toast {
+      animation: slideRight 0.35s cubic-bezier(0.16,1,0.3,1);
+      backdrop-filter: blur(12px);
+    }
+
+    .preview-modal img, .preview-modal video { max-height: 80vh; border-radius: 1rem; }
+
+    .plyr {
+      --plyr-color-main: #e8b84a;
+      --plyr-video-control-color: #f5f0e6;
+      --plyr-video-control-color-hover: #e8b84a;
+      --plyr-range-fill-background: #e8b84a;
+      --plyr-video-background: #0a0b10;
+      border-radius: 1rem;
+      overflow: hidden;
+      max-width: 100%;
+      width: 100%;
+    }
+    .plyr--video { max-height: 80vh; }
+    .plyr__video-wrapper { max-height: 80vh; }
+
+    .stagger > * { animation: slideUp 0.4s cubic-bezier(0.16,1,0.3,1) both; }
+    .stagger > *:nth-child(1) { animation-delay: 0.02s; }
+    .stagger > *:nth-child(2) { animation-delay: 0.05s; }
+    .stagger > *:nth-child(3) { animation-delay: 0.08s; }
+    .stagger > *:nth-child(4) { animation-delay: 0.11s; }
+    .stagger > *:nth-child(5) { animation-delay: 0.14s; }
+    .stagger > *:nth-child(6) { animation-delay: 0.17s; }
+    .stagger > *:nth-child(7) { animation-delay: 0.2s; }
+    .stagger > *:nth-child(8) { animation-delay: 0.23s; }
+    .stagger > *:nth-child(n+9) { animation-delay: 0.26s; }
+
+    .badge-dot {
+      box-shadow: 0 0 0 2px #0c0e14;
+    }
+
+    /* Hide default number spinners etc */
+    input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+      filter: invert(0.8) sepia(1) saturate(3) hue-rotate(5deg);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-100 antialiased min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-accent to-accent-dim flex items-center justify-center shadow-glow">
+            <i class="fas fa-camera-retro text-surface-900 text-lg"></i>
+          </div>
+          <div>
+            <h1 class="text-base font-semibold tracking-tight text-white leading-tight">Thakshila College</h1>
+            <p class="text-[11px] text-accent-soft/80 font-medium tracking-wide">PAS Cloud</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Storage -->
+          <div id="storageIndicator" class="hidden items-center gap-2 text-sm mr-1">
+            <div class="w-24 sm:w-28 bg-surface-700 rounded-full h-1.5 overflow-hidden">
+              <div id="storageBar" class="bg-gradient-to-r from-accent-dim to-accent h-1.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+            <span id="storageText" class="text-[11px] text-gray-400 hidden sm:inline">0 / 100 GB</span>
+          </div>
+
+          <button id="eventsBtn" class="icon-btn relative" title="Upcoming Events">
+            <i class="fas fa-calendar-alt text-sm"></i>
+            <span id="eventsBadge" class="hidden absolute -top-0.5 -right-0.5 bg-accent text-surface-900 text-[10px] font-bold rounded-full min-w-[1.1rem] h-[1.1rem] flex items-center justify-center badge-dot px-0.5">0</span>
+          </button>
+
+          <button id="browserNotifBtn" class="icon-btn relative" title="Browser notifications">
+            <i class="fas fa-desktop text-sm"></i>
+            <span id="browserNotifDot" class="hidden absolute top-0.5 right-0.5 w-2 h-2 bg-emerald-400 rounded-full badge-dot"></span>
+          </button>
+
+          <button id="notifBtn" class="icon-btn relative" title="Notifications">
+            <i class="fas fa-bell text-sm"></i>
+            <span id="notifBadge" class="hidden absolute -top-0.5 -right-0.5 bg-accent text-surface-900 text-[10px] font-bold rounded-full min-w-[1.1rem] h-[1.1rem] flex items-center justify-center badge-dot px-0.5">0</span>
+          </button>
+
+          <div id="authArea" class="ml-1">
+            <button id="loginBtn" class="btn-primary px-4 py-2 text-sm flex items-center gap-2">
+              <i class="fab fa-google"></i>
+              <span class="hidden sm:inline">Sign in</span>
+            </button>
+            <div id="userMenu" class="hidden items-center gap-2">
+              <img id="userAvatar" src="" alt="" referrerpolicy="no-referrer"
+                   class="w-8 h-8 rounded-full object-cover ring-2 ring-accent/40 bg-surface-700" />
+              <span id="userName" class="text-sm font-medium text-gray-200 max-w-[100px] truncate hidden md:inline"></span>
+              <button id="profileBtn" class="icon-btn" title="Profile"><i class="fas fa-user text-xs"></i></button>
+              <button id="logoutBtn" class="icon-btn" title="Logout"><i class="fas fa-sign-out-alt text-xs"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 animate-fade-in">
+    <!-- Toolbar -->
+    <div class="glass rounded-2xl p-3 sm:p-4 mb-5 flex flex-wrap items-center gap-3 shadow-card">
+      <div id="breadcrumb" class="flex items-center gap-1 text-sm text-gray-400 flex-1 min-w-0 overflow-x-auto scrollbar-thin">
+        <button data-path="" class="hover:text-accent font-medium whitespace-nowrap transition"><i class="fas fa-home"></i> Root</button>
+      </div>
+      <div class="flex items-center gap-2 flex-wrap">
+        <button id="refreshBtn" class="icon-btn" title="Refresh"><i class="fas fa-sync-alt text-sm"></i></button>
+        <button id="newFolderBtn" class="btn-ghost px-3.5 py-2 text-sm font-medium disabled:opacity-40 disabled:pointer-events-none" disabled>
+          <i class="fas fa-folder-plus mr-1.5"></i>Folder
+        </button>
+        <label class="btn-primary px-3.5 py-2 text-sm cursor-pointer flex items-center">
+          <i class="fas fa-cloud-upload-alt mr-1.5"></i>Upload
+          <input type="file" id="fileInput" multiple class="hidden" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.ppt,.pptx,.zip,.rar,.txt" />
+        </label>
+        <label class="btn-ghost px-3.5 py-2 text-sm cursor-pointer flex items-center">
+          <i class="fas fa-folder-open mr-1.5"></i>Folder up
+          <input type="file" id="folderInput" webkitdirectory directory multiple class="hidden" />
+        </label>
+      </div>
+    </div>
+
+    <!-- Login banner -->
+    <div id="loginBanner" class="glass rounded-2xl p-4 mb-5 flex items-center gap-4 border border-accent/20 animate-slide-up">
+      <div class="w-11 h-11 rounded-2xl bg-accent/15 flex items-center justify-center shrink-0">
+        <i class="fas fa-lock text-accent"></i>
+      </div>
+      <div>
+        <p class="font-semibold text-white text-sm">Sign in to upload & edit</p>
+        <p class="text-xs text-gray-400 mt-0.5">Everyone can browse. Google login unlocks uploads and folders.</p>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div id="contentArea" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 stagger"></div>
+
+    <div id="emptyState" class="hidden text-center py-24 animate-fade-in">
+      <div class="w-20 h-20 mx-auto rounded-3xl bg-surface-800 flex items-center justify-center mb-5 border border-white/5">
+        <i class="fas fa-images text-3xl text-gray-600"></i>
+      </div>
+      <p class="text-gray-300 text-lg font-medium">This folder is empty</p>
+      <p class="text-gray-500 text-sm mt-1">Upload media or create a folder to get started</p>
+    </div>
+
+    <div id="loadingState" class="text-center py-24">
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-surface-800 border border-white/5 mb-4">
+        <i class="fas fa-spinner fa-spin text-2xl text-accent"></i>
+      </div>
+      <p class="text-gray-400 text-sm">Loading library…</p>
+    </div>
+  </main>
+
+  <!-- Notification panel -->
+  <div id="notifPanel" class="hidden fixed right-3 sm:right-4 top-[4.5rem] w-96 max-w-[calc(100vw-1.5rem)] glass-strong rounded-2xl shadow-panel z-50 overflow-hidden panel-slide">
+    <div class="px-4 py-3.5 flex items-center justify-between border-b border-white/5">
+      <h3 class="font-semibold text-sm text-white"><i class="fas fa-bell text-accent mr-2"></i>Notifications</h3>
+      <button id="closeNotif" class="icon-btn !w-8 !h-8"><i class="fas fa-times text-xs"></i></button>
+    </div>
+    <div id="notifList" class="max-h-96 overflow-y-auto scrollbar-thin divide-y divide-white/5">
+      <p class="p-6 text-sm text-gray-500 text-center">No notifications yet</p>
+    </div>
+  </div>
+
+  <!-- Events panel -->
+  <div id="eventsPanel" class="hidden fixed right-3 sm:right-4 top-[4.5rem] w-[28rem] max-w-[calc(100vw-1.5rem)] glass-strong rounded-2xl shadow-panel z-50 overflow-hidden panel-slide">
+    <div class="px-4 py-3.5 flex items-center justify-between border-b border-white/5">
+      <h3 class="font-semibold text-sm text-white"><i class="fas fa-calendar-alt text-accent mr-2"></i>Upcoming Events</h3>
+      <div class="flex items-center gap-1.5">
+        <button id="adminMembersBtn" class="hidden text-[11px] btn-ghost px-2.5 py-1 font-semibold" title="Manage members">
+          <i class="fas fa-users mr-1"></i>Members
+        </button>
+        <button id="createEventBtn" class="hidden text-[11px] btn-primary px-2.5 py-1" title="Create event">
+          <i class="fas fa-plus mr-1"></i>New
+        </button>
+        <button id="closeEvents" class="icon-btn !w-8 !h-8"><i class="fas fa-times text-xs"></i></button>
+      </div>
+    </div>
+    <div id="eventsList" class="max-h-[28rem] overflow-y-auto scrollbar-thin divide-y divide-white/5">
+      <p class="p-6 text-sm text-gray-500 text-center">Loading events…</p>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toastContainer" class="fixed bottom-5 right-4 z-[70] flex flex-col gap-2 max-w-sm"></div>
+
+  <!-- ========== Modals ========== -->
+
+  <!-- New Folder -->
+  <div id="folderModal" class="hidden fixed inset-0 modal-backdrop z-50 flex items-center justify-center p-4">
+    <div class="modal-panel glass-strong rounded-3xl w-full max-w-md overflow-hidden">
+      <div class="px-6 pt-6 pb-2">
+        <div class="w-12 h-12 rounded-2xl bg-accent/15 flex items-center justify-center mb-4">
+          <i class="fas fa-folder-plus text-accent text-lg"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-white">Create folder</h3>
+        <p class="text-xs text-gray-500 mt-1">Will be created in the current location.</p>
+      </div>
+      <div class="px-6 py-4">
+        <input id="folderNameInput" type="text" maxlength="100" placeholder="e.g. Exhibition 2026"
+               class="input-dark w-full px-4 py-3 text-sm" />
+      </div>
+      <div class="px-6 pb-6 flex justify-end gap-2">
+        <button id="cancelFolder" class="btn-ghost px-4 py-2 text-sm">Cancel</button>
+        <button id="confirmFolder" class="btn-primary px-5 py-2 text-sm">Create</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rename -->
+  <div id="renameModal" class="hidden fixed inset-0 modal-backdrop z-50 flex items-center justify-center p-4">
+    <div class="modal-panel glass-strong rounded-3xl w-full max-w-md overflow-hidden">
+      <div class="px-6 pt-6 pb-2">
+        <div class="w-12 h-12 rounded-2xl bg-accent/15 flex items-center justify-center mb-4">
+          <i class="fas fa-pen text-accent text-lg"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-white">Rename</h3>
+      </div>
+      <div class="px-6 py-4">
+        <input id="renameInput" type="text" maxlength="200" class="input-dark w-full px-4 py-3 text-sm" />
+      </div>
+      <div class="px-6 pb-6 flex justify-end gap-2">
+        <button id="cancelRename" class="btn-ghost px-4 py-2 text-sm">Cancel</button>
+        <button id="confirmRename" class="btn-primary px-5 py-2 text-sm">Rename</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete confirm -->
+  <div id="deleteModal" class="hidden fixed inset-0 modal-backdrop z-50 flex items-center justify-center p-4">
+    <div class="modal-panel glass-strong rounded-3xl w-full max-w-md overflow-hidden">
+      <div class="px-6 pt-6 pb-2">
+        <div class="w-12 h-12 rounded-2xl bg-rose/15 flex items-center justify-center mb-4">
+          <i class="fas fa-trash text-rose-soft text-lg"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-white">Delete item?</h3>
+        <p id="deleteMessage" class="text-sm text-gray-400 mt-2">This cannot be undone.</p>
+      </div>
+      <div class="px-6 pb-6 flex justify-end gap-2 pt-4">
+        <button id="cancelDelete" class="btn-ghost px-4 py-2 text-sm">Cancel</button>
+        <button id="confirmDelete" class="btn-danger px-5 py-2 text-sm font-semibold">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile -->
+  <div id="profileModal" class="hidden fixed inset-0 modal-backdrop z-50 flex items-center justify-center p-4">
+    <div class="modal-panel glass-strong rounded-3xl w-full max-w-md overflow-hidden">
+      <div class="px-6 pt-6 pb-2">
+        <h3 class="text-lg font-semibold text-white">Profile</h3>
+      </div>
+      <div class="px-6 py-4 space-y-4">
+        <div class="flex items-center gap-4">
+          <img id="profileAvatar" src="" referrerpolicy="no-referrer"
+               class="w-16 h-16 rounded-2xl object-cover ring-2 ring-accent/30 bg-surface-700" />
+          <div>
+            <p id="profileEmail" class="text-sm text-gray-300"></p>
+            <p class="text-[11px] text-gray-500 mt-0.5">Google account</p>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-gray-400 mb-1.5">Display name</label>
+          <input id="profileNameInput" type="text" maxlength="50" class="input-dark w-full px-4 py-2.5 text-sm" />
+        </div>
+        <div class="rounded-2xl bg-white/[0.03] border border-white/5 p-3.5">
+          <p class="text-xs font-medium text-gray-400">Storage quota</p>
+          <p id="profileStorage" class="text-sm text-accent-soft mt-1 font-medium">0 GB / 100 GB</p>
+        </div>
+
+        <!-- Phone verification -->
+        <div id="phoneVerifySection" class="rounded-2xl bg-white/[0.03] border border-white/5 p-3.5 space-y-3">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-medium text-gray-400">Phone verification</p>
+            <span id="phoneStatusBadge" class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-gray-500">Not verified</span>
+          </div>
+          <p id="phoneVerifiedInfo" class="hidden text-sm text-gray-300"></p>
+          <div id="phoneForm" class="space-y-2.5">
+            <input id="phoneInput" type="tel" placeholder="077 123 4567" class="input-dark w-full px-4 py-2.5 text-sm" />
+            <button id="requestOtpBtn" type="button" class="btn-primary w-full py-2.5 text-sm">
+              <i class="fas fa-sms mr-1.5"></i>Send OTP
+            </button>
+            <div id="otpRow" class="hidden space-y-2">
+              <input id="otpInput" type="text" inputmode="numeric" maxlength="6" placeholder="6-digit code" class="input-dark w-full px-4 py-2.5 text-sm tracking-widest text-center" />
+              <p id="otpDevHint" class="hidden text-[11px] text-accent/90 text-center"></p>
+              <button id="verifyOtpBtn" type="button" class="btn-primary w-full py-2.5 text-sm">
+                <i class="fas fa-shield-alt mr-1.5"></i>Verify code
+              </button>
+              <button id="resendOtpBtn" type="button" class="btn-ghost w-full py-2 text-xs">Resend code</button>
+            </div>
+          </div>
+          <button id="removePhoneBtn" type="button" class="hidden btn-danger w-full py-2 text-xs">Remove phone number</button>
+        </div>
+      </div>
+      <div class="px-6 pb-6 flex justify-end gap-2">
+        <button id="cancelProfile" class="btn-ghost px-4 py-2 text-sm">Cancel</button>
+        <button id="saveProfile" class="btn-primary px-5 py-2 text-sm">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create / Edit Event -->
+  <div id="eventModal" class="hidden fixed inset-0 modal-backdrop z-50 flex items-center justify-center p-4">
+    <div class="modal-panel glass-strong rounded-3xl w-full max-w-lg overflow-hidden">
+      <div class="px-6 pt-6 pb-2">
+        <div class="w-12 h-12 rounded-2xl bg-accent/15 flex items-center justify-center mb-4">
+          <i class="fas fa-calendar-plus text-accent text-lg"></i>
+        </div>
+        <h3 id="eventModalTitle" class="text-lg font-semibold text-white">Schedule event</h3>
+        <p class="text-xs text-gray-500 mt-1">All members get a notification when you publish.</p>
+      </div>
+      <div class="px-6 py-4 space-y-3.5">
+        <div>
+          <label class="block text-xs font-medium text-gray-400 mb-1.5">Title *</label>
+          <input id="eventTitle" type="text" maxlength="120" placeholder="Annual Photo Exhibition" class="input-dark w-full px-4 py-2.5 text-sm" />
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-gray-400 mb-1.5">Date & time *</label>
+          <input id="eventDate" type="datetime-local" class="input-dark w-full px-4 py-2.5 text-sm" />
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-gray-400 mb-1.5">Location</label>
+          <input id="eventLocation" type="text" maxlength="200" placeholder="College Main Hall" class="input-dark w-full px-4 py-2.5 text-sm" />
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-gray-400 mb-1.5">Description</label>
+          <textarea id="eventDescription" rows="3" maxlength="2000" placeholder="Details…"
+                    class="input-dark w-full px-4 py-2.5 text-sm resize-none"></textarea>
+        </div>
+      </div>
+      <div class="px-6 pb-6 flex justify-end gap-2">
+        <button id="cancelEvent" class="btn-ghost px-4 py-2 text-sm">Cancel</button>
+        <button id="saveEvent" class="btn-primary px-5 py-2 text-sm"><i class="fas fa-paper-plane mr-1.5"></i>Publish</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Event detail -->
+  <div id="eventDetailModal" class="hidden fixed inset-0 modal-backdrop z-50 flex items-center justify-center p-4">
+    <div class="modal-panel glass-strong rounded-3xl w-full max-w-lg overflow-hidden max-h-[90vh] flex flex-col">
+      <div class="px-6 pt-5 pb-3 flex items-center justify-between border-b border-white/5 shrink-0">
+        <h3 id="eventDetailTitle" class="text-lg font-semibold text-white truncate pr-4">Event</h3>
+        <button id="closeEventDetail" class="icon-btn !w-8 !h-8 shrink-0"><i class="fas fa-times text-xs"></i></button>
+      </div>
+      <div id="eventDetailBody" class="px-6 py-5 overflow-y-auto space-y-3 text-sm"></div>
+      <div id="eventDetailActions" class="px-6 py-4 border-t border-white/5 flex justify-end gap-2 shrink-0 hidden"></div>
+    </div>
+  </div>
+
+  <!-- Members (admin) -->
+  <div id="membersModal" class="hidden fixed inset-0 modal-backdrop z-50 flex items-center justify-center p-4">
+    <div class="modal-panel glass-strong rounded-3xl w-full max-w-2xl overflow-hidden max-h-[90vh] flex flex-col">
+      <div class="px-6 pt-5 pb-3 flex items-center justify-between border-b border-white/5 shrink-0">
+        <h3 class="text-lg font-semibold text-white"><i class="fas fa-users text-accent mr-2"></i>Members</h3>
+        <button id="closeMembers" class="icon-btn !w-8 !h-8"><i class="fas fa-times text-xs"></i></button>
+      </div>
+      <div id="membersList" class="p-4 overflow-y-auto flex-1 scrollbar-thin">
+        <p class="text-sm text-gray-500 text-center py-8">Loading…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preview -->
+  <div id="previewModal" class="hidden fixed inset-0 bg-black/85 z-50 flex items-center justify-center p-4 preview-modal backdrop-blur-sm">
+    <button id="closePreview" class="absolute top-5 right-5 icon-btn !w-10 !h-10 z-10 bg-white/10 border-white/10 text-white hover:bg-white/20">
+      <i class="fas fa-times"></i>
+    </button>
+    <div id="previewContent" class="max-w-5xl w-full flex items-center justify-center animate-scale-in"></div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
